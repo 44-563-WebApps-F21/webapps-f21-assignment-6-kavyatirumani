@@ -14,17 +14,17 @@
 </head>
 <body>
     <form>
-        <input type="checkbox" id="elect" name="vehicle"   
-          value="electric" >
-        <label for="elect">electric</label></br>
+        <input type="checkbox" id="Elect" name="vehicle"   
+          value="Electric" >
+        <label for="Elect">Electric</label></br>
       
-        <input type="checkbox" id="ac" name="vehicle" 
-           value="ac">
-        <label for="ac">ac</label></br>
+        <input type="checkbox" id="AC" name="vehicle" 
+           value="AC">
+        <label for="AC">AC</label></br>
       
-        <input type="checkbox" id="gp" name="vehicle"   
-           value="gps" >
-        <label for="gp">gps</label></br>
+        <input type="checkbox" id="Gp" name="vehicle"   
+           value="Gps" >
+        <label for="Gp">gps</label></br>
         <br>
     
         <input type="button" onclick="orderCar()" value="Order a car">
@@ -36,23 +36,23 @@
     <script> 
         var my_car = {}
       function orderCar (){
-           var elect =false
-           var a =false
-           var g =false
-          electric = document.getElementById("elect")
-          ac = document.getElementById("ac")
-          gps = document.getElementById("gp")
+           var Elect =false
+           var A =false
+           var G =false
+          Electric = document.getElementById("Elect")
+          AC = document.getElementById("AC")
+          Gps = document.getElementById("Gp")
          
-          if (electric.checked) {
-              elect=true
+          if (Electric.checked) {
+              Elect=true
           }
-           if ( ac.checked){
-              a=true
+           if ( AC.checked){
+              A=true
           }
-          if (gps.checked){
-              g=true
+          if (Gps.checked){
+              G=true
           }
-          my_car={electric  : elect, ac  : a, gps  : g}
+          my_car={Electric  : Elect, AC  : A, Gps  : G}
       
           out=document.getElementById("result").innerHTML="Car Ordered is : "+JSON.stringify(my_car)
       }
