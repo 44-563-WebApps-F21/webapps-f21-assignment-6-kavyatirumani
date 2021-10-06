@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car page</title>
+    <h1>Tirumani Kavya Sree orders a car</h1>
+    <style>
+        form{
+            background-color: rgb(180, 134, 224);
+            border: dotted rgb(173, 180, 106);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="checkbox" id="elect" name="vehicle"   
+          value="electric" >
+        <label for="elect">electric</label></br>
+      
+        <input type="checkbox" id="ac" name="vehicle" 
+           value="ac">
+        <label for="ac">ac</label></br>
+      
+        <input type="checkbox" id="gp" name="vehicle"   
+           value="gps" >
+        <label for="gp">gps</label></br>
+        <br>
+    
+        <input type="button" onclick="orderCar()" value="Order a car">
+      </form>
+    
+    
+    <p id="result">This text will be replaced </p>
+    
+    <script> 
+        var my_car = {}
+      function orderCar (){
+           var elect =false
+           var a =false
+           var g =false
+          electric = document.getElementById("elect")
+          ac = document.getElementById("ac")
+          gps = document.getElementById("gp")
+         
+          if (electric.checked) {
+              elect=true
+          }
+           if ( ac.checked){
+              a=true
+          }
+          if (gps.checked){
+              g=true
+          }
+          my_car={electric  : elect, ac  : a, gps  : g}
+      
+          out=document.getElementById("result").innerHTML="Car Ordered is : "+JSON.stringify(my_car)
+      }
+      </script>
+      <br>
+      <form>
+        <label for="property">Enter a property</label>
+        <input type ="text" id="property" name="property" min=10 max=50 step=2 value="color"> <br>
+    
+        <label for="value">Enter a value</label>
+        <input type ="text" id="value" name="value" autofocus> <br>
+    
+        <input type="button" onclick="updateCar()" value="Update the car">
+    </form>
+    
+    
+    <p id="res">This text will be replaced </p>
+    <script>
+        function updateCar() {
+            propert=document.getElementById("property").value
+            val=document.getElementById("value").value
+            my_car[propert]=val
+            output=document.getElementById("res").innerHTML=JSON.stringify(my_car)
+        }
+    </script>
+</body>
+
+</html>
